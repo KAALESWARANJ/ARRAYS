@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main(void)
+{
+	int n,a[100],i,j,f[100],count=1;
+	scanf("%d\n",&n);
+	for(i=0;i<n;i++)
+	{
+	scanf("%d\t",&a[i]);
+	f[i]=-1;
+	}
+	for(i=0;i<n;i++)
+	{
+	   count=1;	
+	   for(j=i+1;j<n;j++)
+	   {
+	   	if(a[i]==a[j])
+	   	{
+	   	  count++;
+	   	  f[j]=0;
+	   	}
+	   }
+	   if(f[i]!=0)
+	   {
+	   	f[i]=count;
+	   }
+	}
+	for(i=0;i<n;i++)
+	{
+		if(f[i]==1)
+		{
+			printf("%d\t",a[i]);
+		}
+	}
+}
